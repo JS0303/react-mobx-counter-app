@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from "mobx";
 
-export default class conunterStore {
+export default class CounterStore {
   count = 0;
 
   constructor() {

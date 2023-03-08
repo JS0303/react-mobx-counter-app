@@ -3,14 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import conunterStore from "./counterStore";
+import CounterStore from "./CountStore";
+import { CounterProvider } from "./context/counterContext";
 
-const store = new conunterStore();
+const store = new CounterStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App myCounter={store} />
+    <CounterProvider value={store}>
+      <App />
+    </CounterProvider>
   </React.StrictMode>
 );
 
